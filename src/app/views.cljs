@@ -16,7 +16,15 @@
     [:p.counter (get @app-state :count)]
     [:button.btn {:on-click #(decrement %)} "\u25BC"]]])
 
+(def banner-style
+  {:style {:color "blue" :text-align :center}})
+
+(defn banner
+  []
+  [:div banner-style "WARN"])
+
 (defn app []
   [:div
    [header]
+   [banner]
    [counter]])
