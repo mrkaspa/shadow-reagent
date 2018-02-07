@@ -1,5 +1,5 @@
 (ns app.events
-  (:require [app.state :refer [app-state]]))
+  (:require [app.state :refer [app-state update-state]]))
 
 (defn double-n
   [n fun]
@@ -17,9 +17,15 @@
 (defn increment
   [event]
   (.preventDefault event)
-  (swap! app-state update-in [:count] double-inc))
+  (->
+    (:count @app-state)
+    (double-inc)
+    (update-state)))
 
 (defn decrement
   [event]
   (.preventDefault event)
-  (swap! app-state update-in [:count] double-dec))
+  (->
+    (:count @app-state)
+    (double-dec)
+    (update-state)))
