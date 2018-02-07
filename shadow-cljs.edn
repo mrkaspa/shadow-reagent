@@ -1,6 +1,6 @@
 {:source-paths ["src"]
 
- :jvm-opts ["--add-modules" "java.xml.bind"]
+;  :jvm-opts ["--add-modules" "java.xml.bind"]
 
  :dependencies [[binaryage/devtools "0.9.9"]
                 [proto-repl "0.3.1"]
