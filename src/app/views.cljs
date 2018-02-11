@@ -3,9 +3,9 @@
             [app.events :refer [increment decrement]]))
 
 (defn header
-  []
+  [name]
   [:div.banner
-   [:h1 "A template for Reagent apps"]
+   [:h1 "A template for Reagent apps --- " name]
    [:p "Starting point for ClojureScript apps with shadow-cljs, proto-repl, and reagent."]])
 
 (defn counter
@@ -14,17 +14,18 @@
    [:div.btn-group
     [:button.btn {:on-click #(increment %)} "\u25B2"]
     [:p.counter (get @app-state :count)]
-    [:button.btn {:on-click #(decrement %)} "\u25BC"]]])
+    [:button.btn {:on-click #(decrement  %)} "\u25BC"]]])
 
 (def banner-style
-  {:style {:color "blue" :text-align :center}})
+  {:style {:color "red" :text-align :center}})
 
 (defn banner
   []
   [:div banner-style "WARN"])
 
-(defn app []
+(defn app
+  []
   [:div
-   [header]
+   [header "name"]
    [banner]
    [counter]])

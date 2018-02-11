@@ -5,8 +5,8 @@
             [cljs.spec.test.alpha :as st]
             [expound.alpha :as expound]))
 
-(enable-console-print!)
-(set! s/*explain-out* expound/printer)
+; (enable-console-print!)
+; (set! s/*explain-out* expound/printer)
 
 
 (defn ^:export main []
@@ -18,4 +18,4 @@
     [views/app]
     (.getElementById js/document "app")))
 
-(st/instrument)
+; (st/instrument)
